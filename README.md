@@ -8,6 +8,31 @@ SignX is a computer vision system designed to bridge the gap between sign langua
 ## 2. Intelligence Package (File Structure)
 
 This directory contains the necessary components for the model's lifecycle, from raw data to real-time execution.
+```
+ .
+├── 󱧼 build
+│   └──  model.p
+├──  data
+│   ├──  0.npy
+│   ├──  1.npy
+│   ├──  2.npy
+│   ├──  3.npy
+│   ├──  4.npy
+│   ├──  5.npy
+│   ├──  6.npy
+│   ├──  7.npy
+│   ├──  8.npy
+│   ├──  9.npy
+│   └──  10.npy
+├──  flake.lock
+├──  flake.nix
+├──  init.py
+├──  project.toml
+├── 󰂺 README.md
+└── 󰣞 src
+    ├──  test.py
+    └──  train.py
+```
 
 ### **Core Assets**
 * **`data/*.npy` (0.npy - 10.npy)**
@@ -37,19 +62,31 @@ This directory contains the necessary components for the model's lifecycle, from
 
 ### **Environment Configuration**
 * **`flake.nix` / `flake.lock`**
-    * **Classification:** Logistics.
     * **Purpose:** Defines the reproducible build environment for NixOS systems. Ensures all system-level dependencies (glibc, libstdc++, opencv) are injected correctly.
+* **`project.toml`**
+    * **Purpose:** For easy accessibility of files from code by seting the root directory of the project.
 
 ---
 
 ## 3. Deployment Protocols
 
-### **Option A: Standard Deployment (Windows/Ubuntu/Mac)**
-For generic operating systems using standard Python.
+```
+git clone https://github.com/JithinSunildas.git/signx
+cd signx
+```
 
 **1. Prerequisites:**
 Ensure Python 3.10 or 3.11 is installed.
+- Search web for instructions if you use Windows.
+- Python is pre-installed in most of the linux distros.
+   - Update the version if needed.
+   - In most cases it will be latest version.
 
-**2. Install Dependencies:**
+**2. Install Dependencies and Build:**
 ```bash
 pip install numpy opencv-python mediapipe pyttsx3 scikit-learn
+python3 src/train.py
+python3 src/test.py
+```
+
+--- 
