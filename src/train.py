@@ -9,7 +9,7 @@ X_train = []
 y_train = []
 
 for i in range(11):
-    filename = f"{i}.npy"
+    filename = f"data/{i}.npy"
     if os.path.exists(filename):
         vector = np.load(filename)
         
@@ -35,7 +35,7 @@ model = KNeighborsClassifier(n_neighbors=1)
 model.fit(X_train, y_train)
 
 # Save the model artifact
-with open('model.p', 'wb') as f:
+with open('build/model.p', 'wb') as f:
     pickle.dump({'model': model}, f)
 
 print("--- MISSION COMPLETE: model.p created ---")
