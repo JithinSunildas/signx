@@ -45,7 +45,6 @@
               xorg.libICE
               xorg.libSM
 
-              # Wayland/common libs (Good to have since you use niri)
               libxkbcommon
               dbus
               wayland
